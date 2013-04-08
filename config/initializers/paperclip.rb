@@ -1,10 +1,10 @@
 if Rails.env.in? ['development', 'test']
   class Megumi::Application
-    def paperclip_path(suffix = '/:class_name/:attachment/:id.:style.:extension')
+    def paperclip_path(suffix = '/:class/:attachment/:id.:style.:extension')
         ":rails_root/public/system#{suffix}"
     end
 
-    def paperclip_url(suffix = '/:class_name/:attachment/:id.:style.:extension')
+    def paperclip_url(suffix = '/:class/:attachment/:id.:style.:extension')
       "/system#{suffix}"
     end
   end
@@ -20,11 +20,11 @@ else
   )
 
   class Megumi::Application
-    def paperclip_path(suffix = '/:class_name/:attachment/:id.:style.:extension')
-      "/:rails_env/#{suffix}"
+    def paperclip_path(suffix = '/:class/:attachment/:id.:style.:extension')
+      "/:rails_env#{suffix}"
     end
 
-    def paperclip_url(suffix = '/:class_name/:attachment/:id.:style.:extension')
+    def paperclip_url(suffix = '/:class/:attachment/:id.:style.:extension')
       "http://subcompare.sugoisubs.com/:rails_env#{suffix}"
     end
   end
