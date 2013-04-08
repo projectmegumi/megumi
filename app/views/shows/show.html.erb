@@ -26,7 +26,7 @@
         <strong>File size:</strong> <%= number_to_human_size release.file_size %>
       </p>
       <ul id="screenshots">
-        <% release.screenshots.each do |screenshot| %>
+        <% release.screenshots.order('time').each do |screenshot| %>
           <%= content_tag_for :li, screenshot do %>
             <%= link_to screenshot.image.url do %>
               <%= image_tag screenshot.image.url(:small) %>
