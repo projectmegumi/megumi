@@ -1,13 +1,15 @@
 <h1>Winter 2013</h1>
 
-<article class="row">
+<ul id="shows" class="row">
   <% if @shows.present? %>
     <% @shows.each do |show| %>
-      <section class="span3">
-        <h2><%= show.name %></h2>
-      </section>
+      <%= content_tag_for :li, show, class: 'span4' do %>
+        <%= link_to show, style: "background-image: url('#{show.cover_image.url(:small)}')" do %>
+          <p><span><%= show.name %></span></p>
+        <% end %>
+      <% end %>
     <% end %>
   <% else %>
-    <p class="span9">We currently don't have any screenshot for any show in this season. Please check back soon!</p>
+    <p class="span12">We currently don't have any screenshot for any show in this season. Please check back soon!</p>
   <% end %>
 </article>

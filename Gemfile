@@ -10,6 +10,7 @@ gem 'paperclip'
 gem 'paperclip-storage-ftp'
 gem 'strong_parameters'
 gem 'twitter-bootstrap-rails'
+gem 'bourbon'
 
 group :assets do
   gem 'therubyracer'

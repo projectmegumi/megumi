@@ -1,0 +1,41 @@
+@import "bourbon";
+
+#shows {
+  .show {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+
+    @media (min-width: 768px) {
+      margin-left: 18px;
+    }
+
+    &:hover {
+      border: 1px solid #666;
+    }
+
+    a {
+      display: block;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      height: 240px;
+      position: relative;
+
+      p {
+        @include linear-gradient(rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.7) 100%);
+        color: #fff;
+        display: block;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        margin: 0;
+        padding-top: 40px;
+
+        span {
+          display: block;
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
+}

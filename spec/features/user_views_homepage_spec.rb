@@ -9,8 +9,8 @@ feature 'User views homepage' do
   end
 
   scenario 'Shows available' do
-    Show.create!(name: 'GJ-bu')
-    Show.create!(name: 'Sakurasou no Pet na Kanojo')
+    @gj_bu = Show.create!(name: 'GJ-bu', cover_image: fixture_file('gj-bu.jpg'))
+    @sakurasou = Show.create!(name: 'Sakurasou no Pet na Kanojo', cover_image: fixture_file('sakurasou.jpg'))
 
     visit '/'
 
