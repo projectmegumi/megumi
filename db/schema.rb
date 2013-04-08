@@ -11,6 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130408023220) do
+
+  create_table "shows", :force => true do |t|
+    t.string   "name"
+    t.string   "alternate_name"
+    t.string   "cover_image_file_name"
+    t.string   "cover_image_content_type"
+    t.integer  "cover_image_file_size"
+    t.datetime "cover_image_updated_at"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
 
 end
