@@ -12,7 +12,7 @@ else
   Paperclip::Attachment.default_options.merge!(
     storage: :ftp,
     ftp_servers: [
-      host: 'ftp.sugoisubs.com',
+      host: 'img.projectmegumi.com',
       user: ENV['FTP_USERNAME'],
       password: ENV['FTP_PASSWORD'],
       passive: true
@@ -25,7 +25,7 @@ else
     end
 
     def paperclip_url(suffix = '/:class/:attachment/:id.:style.:extension')
-      "http://subcompare.sugoisubs.com/:rails_env#{suffix}"
+      "http://img.projectmegumi.com/:rails_env#{suffix}"
     end
   end
 end
