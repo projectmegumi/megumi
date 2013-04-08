@@ -11,7 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408023220) do
+ActiveRecord::Schema.define(:version => 20130408061159) do
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.string   "abbriviation"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "releases", :force => true do |t|
+    t.integer  "group_id"
+    t.integer  "show_id"
+    t.integer  "episode_number"
+    t.string   "file_name"
+    t.integer  "file_size"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "releases", ["group_id"], :name => "index_releases_on_group_id"
+  add_index "releases", ["show_id"], :name => "index_releases_on_show_id"
+
+  create_table "screenshots", :force => true do |t|
+    t.integer  "release_id"
+    t.integer  "time"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "screenshots", ["release_id"], :name => "index_screenshots_on_release_id"
 
   create_table "shows", :force => true do |t|
     t.string   "name"
