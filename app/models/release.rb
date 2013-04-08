@@ -1,5 +1,5 @@
 class Release < ActiveRecord::Base
-  belongs_to :group_id
-  belongs_to :show_id
+  belongs_to :group
+  belongs_to :show
   has_many :screenshots
 end

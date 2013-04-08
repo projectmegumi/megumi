@@ -1,0 +1,40 @@
+<% content_for :title, "#{@show.name} - Project Megumi" %>
+
+<h1><%= @show.name %></h1>
+
+<section id="groups-toggle">
+  <p>Select groups to be displayed:</p>
+
+  <ul id="groups">
+    <% @show.groups.each do |group| %>
+      <%= content_tag_for :li, group do %>
+        <%= label_tag do %>
+          <%= check_box_tag "group_#{group.abbriviation}", group.abbriviation, true %>
+          <%= group.name %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+</section>
+
+<section id="releases" style="width: <%= 704 * @show.releases.count %>px;">
+  <% @show.releases.each do |release| %>
+    <%= content_tag_for :section, release, class: release.group.abbriviation do %>
+      <h2><%= release.group.name %></h2>
+      <p>
+        <strong>File name:</strong> <%= release.file_name %><br />
+        <strong>File size:</strong> <%= number_to_human_size release.file_size %>
+      </p>
+      <ul id="screenshots">
+        <% release.screenshots.each do |screenshot| %>
+          <%= content_tag_for :li, screenshot do %>
+            <%= link_to screenshot.image.url do %>
+              <%= image_tag screenshot.image.url(:small) %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+  <section style="clear: both;"></section>
+</section>

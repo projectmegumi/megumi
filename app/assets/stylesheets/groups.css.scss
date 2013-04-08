@@ -1,0 +1,53 @@
+#groups-toggle {
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 10px 15px;
+
+  #groups {
+    margin: 0;
+    margin-left: 10px;
+
+    li {
+      display: inline;
+      list-style-type: none;
+      margin-right: 10px;
+
+      label {
+        display: inline;
+      }
+    }
+  }
+}
+
+#releases {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .release {
+    float: left;
+    width: 644px;
+    padding: 0 15px;
+
+    &:hover {
+      background: #eee;
+      border-radius: 6px;
+    }
+
+    ul {
+      margin: 0;
+
+      li {
+        list-style-type: none;
+        margin-bottom: 15px;
+
+        img {
+          border: 2px solid #fff;
+
+          &:hover {
+            border-color: #999;
+          }
+        }
+      }
+    }
+  }
+}
