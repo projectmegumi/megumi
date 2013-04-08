@@ -1,6 +1,6 @@
 class Show < ActiveRecord::Base
   has_many :releases
-  has_many :groups, through: :releases
+  has_many :groups, through: :releases, order: 'groups.name'
 
   has_attached_file :cover_image,
     path: Rails.application.paperclip_path,

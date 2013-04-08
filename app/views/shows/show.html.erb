@@ -18,7 +18,7 @@
 </section>
 
 <section id="releases" style="width: <%= 704 * @show.releases.count %>px;">
-  <% @show.releases.each do |release| %>
+  <% @show.releases.joins(:group).order('groups.name').each do |release| %>
     <%= content_tag_for :section, release, class: release.group.abbriviation do %>
       <h2><%= release.group.name %></h2>
       <p>
